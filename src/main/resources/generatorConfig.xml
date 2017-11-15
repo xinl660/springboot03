@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <!-- 指向MySQL的驱动包D:\Program Files\repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar -->
+  <classPathEntry location="D:\maven\repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+  <context id="context1" >
+    <commentGenerator>
+      <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+    <!-- 链接MYSQL -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/day82_springboot?characterEncoding=utf-8" userId="root" password="root" />
+    <!-- pojo实体类 -->
+    <javaModelGenerator targetPackage="org.qf.pojo" targetProject="src/main/java" />
+    <!-- 映射文件放如资源目录:自动生成配置文件 -->
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+    <!-- mapper接口 生成DAO接口  -->
+    <javaClientGenerator targetPackage="org.qf.dao" targetProject="src/main/java" type="XMLMAPPER" />
+
+    <!--
+    tableName 表的名称
+    domainObjectName pojo的名称 实体类
+    -->
+    <table tableName="userinfo" domainObjectName="UserInfo">
+    </table>
+
+  </context>
+</generatorConfiguration>
